@@ -42,12 +42,70 @@
 </br>
 
 ## 5. 스케줄러 
-### 1) 장기스케줄러
-### 2) 단기스케줄러
-### 3) 중기스케줄러 
+1) 스케줄러에는 Job큐, Ready큐, Device I/O 큐가 존재함
+* Job큐 : 현재 시스템 내에 있는 모든 프로세스의 집합
+* Ready큐 : 현재 메모리 내에 있으면서 CPU의 할당받기를 기다리는 상태
+* Device 큐 : Device I/O 작업을 대기하고 있는 프로세스의 집합
+2) 장기스케줄러 : 메모리는 한정되어 있는 상태에서, 한꺼번에 많은 프로세스들이 메모리에 올라올 때 대용량 메모리(일반적으로 디스크, pool)에 저장이 된다. 이때 어떤 프로세스에 메모리를 할당하여 ready queue로 보낼지 결정하는 역할을 함.
+* 메모리와 디스크 사이의 스케줄링을 담당
+* 프로세스에 메모리+각종 리소스를 할당
+* Degree of Multiprogramming 제어
+* 프로세스의 상태 new -> ready
+3) 단기스케줄러 : CPU와 메모리 사이의 스케줄링을 담당한다.
+* Ready Queue에 존재하는 프로세스 중 어떤 프로세스를 running 시킬 지 결정하는 역할
+* 프로세스에 CPU를 할당함.
+* 프로세스의 상태 new -> ready -> waiting -> ready
+4) 중기스케줄러 : 여유 공간을 마련하기 위해 프로세스를 통째로 메모리에서 디스크로 쫓아냄(Swapping)
+* 프로세스에게서 메모리를 deallocate
+* 메모리에 너무 많은 프로그램이 올라가는 것을 조절하는 스케줄러
+* 프로세스의 상태 raedy -> suspended
+
+</br>
+
+
 ## 6. CPU 스케줄러
+* **스케줄링 대상은 Ready Queue에 있는 프로세스들이다.**
+1) FCFS : First Come First Served -> 비선점형, 먼저온거 걍 먼처함 / convoy effect
+2) SJF : Shortest Job First -> CPU burst time이 짧은 프로세스에게 선할당, starvation
+3) SRT : Shortest Remaining time First -> 새로운 프로세스, 새로운 스케줄링, startvation, Have difficult in counting CPU burst time
+4) Priority Scheduling : 선점형 / 비선점형으로 나뉨
+* 선점형 : 더 높은 우선순위가 나타나면 그냥 금마한테 바로 CPU줘버림
+* 비선점형 : 더 높은 우선순위가 나타나면 Ready Queue의 Head에 넣어버림
+* starvation, Indefinite Blokcing <- Aging 기법으로 우선순위를 높여줌.
+5) Round Robin : 현대적인 CPU 스케줄링, 각자의 time Quantum을 가짐. 
+* Response Time이 빨라짐. 
+* 프로세스가 기다리는 시간이 CPU를 사용할 만큼 증가함.
+* Time Quantum이 너무 커지면 FCFS와 같아짐. 또 너무 작아지면 스케줄링 알고리즘의 목적에는 이상적이지만 잦은 Context Switch로 overhead가 발생함.
+</br>
+
+
 ## 7. 동기와 비동기의 차이
+1) 메소드를 실행시킴으로써 **동시에** 반환값이 기대되는 경우를 동기
+2) 그렇지 않은 경우에는 비동기 -> 동시에: 실행되었을 때 값이 반환되기 전까지 blocking 되어 있는 상태
+3) 비동기의 경우 **blocking 되지 않고 이벤트 큐에 넣거나 백그라운드 thread에 해당 task를 위임하고 바로 다음 코드를 실행하기 때문에 기대되는 값이 바로 반환되지 않음**
+
+</br>
+
 ## 8. 프로세스 동기화
+1) **임계영역**: 멀티 스레딩의 문제점에서 나오듯, 동일한 자원을 동시에 접근하는 작업을 실행하는 코드 영역을 Critical Section이라 칭함.
+2) 프로세스들이 Critical Section을 함께 사용할 수 있는 프로토콜을 설계하는 행위 -> Critical Section Problem
+3) Requirements(Basic condition to solve Critical Section)
+* Mutual Exclusion : **상호배제** 프로세스가 실행중이라면 다른 프로세스는 Critical Section에서 실행 불가
+* Progress : 1. Critical Section에서 실행중인 프로세스가 없으며 2. 현재 별도의 동작이 없는 프로세스들만 Critical Section 진입 후보로서 참여될 수 있다.
+* Bounded Waiting : 특정 프로세스가 Critical Section에 진입 신청 후, 다른 프로세스들이 Critical Section에 진입하는 횟수는 제한이 있어야한다.
+* **하나 더있는데 이거 찾아봐야돼!!**
+4) 
+
+</br>
+
 ## 9. 메모리 관리전략
+
+</br>
+
+
 ## 10. 가상 메모리
+
+</br>
+
+
 ## 11. 캐시
