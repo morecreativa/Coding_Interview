@@ -94,12 +94,16 @@
 * Progress : 1. Critical Section에서 실행중인 프로세스가 없으며 2. 현재 별도의 동작이 없는 프로세스들만 Critical Section 진입 후보로서 참여될 수 있다.
 * Bounded Waiting : 특정 프로세스가 Critical Section에 진입 신청 후, 다른 프로세스들이 Critical Section에 진입하는 횟수는 제한이 있어야한다.
 * **하나 더있는데 이거 찾아봐야돼!!**
-4) 
+4) **Lock**: 하드웨어 기반 해결책으로 동시에 공유 자원에 접근하는 것을 막기 위해 Critical Section에 진입하는 프로세스는 Lock을 획득하고 빠져나올 때에는 Lock을 방출한다.
+5) **Semaphore**: Critical Section 문제를 해결하기 위한 동기화 도구 카운팅 세마포-> **가용한 개수를 가진 자원**에 대한 접근 제어용으로 사용되며, 세마포어는 **자원의 개수**로 초기화 된다. 자원을 사용하면 세마포어 -- 방출하면 ++ ㅇㅋ? / 이진 세마포(**MUTEX**) -> 0과 1 사이의 값만 가능하며, 다중 프로세스들 사이의 Critical Section 문제를 해결하기 위해 사용한다.
+6) 세마포어 단점: Busy Waiting->Spin lock이라고 불리는 Semaphore 초기 버전에서 Critical Section에 진입해야하는 프로세스는 진입 코드를 계속 실행시켜 CPU 시간을 낭비하였다. 일반적으로는 Semaphore에서 Ciritical Section에 진입을 시도했지만 실패한 프로세스에 대해 Block시킨 뒤, Ciritical Section에 자리가 날 때 다시 깨우는 방식을 사용한다. Busy Waiting으로 인한 시간낭비 문제가 해결됨!
 
 </br>
 
 ## 9. 메모리 관리전략
-
+1) 각각의 프로세스는 독립된 메모리 공간을 가짐. 서로 다른 메모리 공간에 접근할 수 없는 제한이 걸려있다.
+2) **운영체제만이 운영체제 메모리 영역과 사용자 메모리 영역의 접근에 제약을 받지 않는다.**
+3) 
 </br>
 
 
