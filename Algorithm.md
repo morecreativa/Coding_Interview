@@ -42,6 +42,7 @@ function(int n){
 </br>
 
 ## Sorting Algorithm
+[Link for this Algorithm Code](https://github.com/morecreativa/Algorithm_Practice/blob/master/TestCpp/sortingAlgorithm.py)
 1) Bubble sort: 인접한 인자끼리 서로 비교하면서
 2) Selection Sort: 가장 최소값을 다른 배열에 놓고 계속 비교하면서 오름차순 배열을 만들어가는 정렬법
 3) Merge sort: Divide & Conquer. 더 이상 나누어 지지 않을 때 까지 partition을 진행
@@ -51,3 +52,5 @@ function(int n){
 5) Quick Sort: Divide & Conquer 방법을 사용하지만, Divide 과정에서 pivot을 사용함. pivot으로 설정된 값보다 작은 값이 위치하고, 우측은 큰 값이 위치하도록 partition된다. 
 * 최악의 경우에는 O(N^2)인데 왜 그렇게 되지?
 * 그렇다면 Balanced Partition은 언제 가능하지?
+6) non-Comparison Algorithm (Radix Sort, Count sort)
+7) [퀵정렬이 있는데 왜 Merge랑 Heap Sort는 살아있을까?](https://asfirstalways.tistory.com/338)
