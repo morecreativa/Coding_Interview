@@ -54,3 +54,7 @@ function(int n){
 * 그렇다면 Balanced Partition은 언제 가능하지?
 6) non-Comparison Algorithm (Radix Sort, Count sort)
 7) [퀵정렬이 있는데 왜 Merge랑 Heap Sort는 살아있을까?](https://asfirstalways.tistory.com/338)
+
+## 에라토스테네스의 체
+1) 배수만큼 걸러서 소수를 찾는 알고리즘
+2) [Link for this Algorithm Code](https://github.com/morecreativa/samsung_interview/blob/master/primeNumber.cpp)
