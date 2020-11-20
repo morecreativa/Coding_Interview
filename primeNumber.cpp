@@ -28,7 +28,7 @@ void Erathosthenes(int num){
         for(int j=i+i; j<=num; j+=i) arr[j]=0;
     }
 }
-
+ 
 int main(){
     clock_t start,mid,end;
 
