@@ -10,5 +10,5 @@
 * Binary Search Tree implementation
 * Check for this tree is binary tree or not
 6) Binary Heap -> Max heap, Min heap, heapify
-7) Hash Table->특별한 알고리즘을 통해 HashCode를 생성->
+7) Hash Table->특별한 알고리즘을 통해 HashCode를 생성
 8) 
